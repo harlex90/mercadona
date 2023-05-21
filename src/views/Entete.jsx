@@ -14,7 +14,7 @@ function Entete() {
                     <ul>
                         <li><a href="home">Home</a></li>
                         <li><a href="catalogue">Catalogue</a></li>
-                        <li><a href="#">Sign in</a></li>
+                        <li><a href="loginadmin">Sign in</a></li>
                         <li><a href="#">Sign up</a></li>
                     </ul>
                     <div style={{display: "flex", justifyContent:"center", gap: 10, alignItems: "center"}}>

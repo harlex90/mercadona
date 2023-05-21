@@ -1,3 +1,9 @@
+import caddie from "../../assets/caddie.jpg";
+import guitare from "../../assets/guitare.jpg";
+import fauteuil from "../../assets/fauteuil.jpg"
+import tableau from "../../assets/tableau.jpg"
+
+
 const products = [
     {
         "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
@@ -75,3 +81,5 @@ const ListItems = () => {
             </div>
     )
 }
+
+export default ListItems;
