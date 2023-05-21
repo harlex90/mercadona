@@ -9,6 +9,7 @@ import './App.css';
 import Entete from "./views/Entete";
 import Catalogue from "./views/Catalogue";
 import LoginAdmin from "./views/LoginAdmin";
+import { AuthProvider, RequireAuth } from 'react-auth-kit'
 
 
 
@@ -20,15 +21,20 @@ function Router() {
       <Route path="/home" element={<Home />} />
       <Route path="/catalogue" element={<Catalogue />} />
       <Route path="/loginadmin" element={<LoginAdmin />} />
+      <Route path="/protected" element={<RequireAuth loginPath="/loginadmin"><p>coucou</p></RequireAuth>} />
     </Routes>
   </BrowserRouter>
   )
 }
 
-function App() {
-  return (
-    <Router/>
-  );
-}
+
+const App = () => (
+  <AuthProvider authType = {'cookie'}
+                authName={'_auth'}
+                cookieDomain={window.location.hostname}
+                cookieSecure={window.location.protocol === "https:"}>
+      <Router />
+  </AuthProvider>
+);
 
 export default App;
