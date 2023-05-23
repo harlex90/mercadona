@@ -14,6 +14,11 @@ const AdminCreateProduct = () => {
 
     const navigate = useNavigate();
     const onSubmit = () => {
+        if(!inputCategory) {
+            alert("you must choose a category")
+            return;
+        }
+
         axios.post('/products', {
             category_id: inputCategory,
             name: inputName,
@@ -28,6 +33,7 @@ const AdminCreateProduct = () => {
             <Entete />
             <p>Create a new product</p>
             <select value={inputCategory} onChange={(e) => setInputCategory(e.currentTarget.value)}>
+                <option value={null}> -- select an option -- </option>
                 {categories.map((category) => (
                     <option key={category.id} value={category.id} label={category.name} />
                 ))}

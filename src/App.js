@@ -13,6 +13,8 @@ import AdminListCategories from './views/AdminListCategories'
 import AdminCreateCategories from './views/AdminCreateCategories'
 import AdminListProducts from "./views/AdminListProducts";
 import AdminCreateProduct from "./views/AdminCreateProduct";
+import AdminListPromotions from "./views/AdminListPromotions";
+import AdminCreatePromos from "./views/AdminCreatePromotions";
 
 
 function Router() { 
@@ -28,6 +30,8 @@ function Router() {
       <Route path="/admin/categories/create" element={<RequireAuth loginPath="/loginadmin"><AdminCreateCategories /></RequireAuth>} />
       <Route path="/admin/products" element={<RequireAuth loginPath="/loginadmin"><AdminListProducts /></RequireAuth>} />
       <Route path="/admin/products/create" element={<RequireAuth loginPath="/loginadmin"><AdminCreateProduct /></RequireAuth>} />
+      <Route path="/admin/promos" element={<RequireAuth loginPath="/loginadmin"><AdminListPromotions /></RequireAuth>} />
+      <Route path="/admin/promos/create" element={<RequireAuth loginPath="/loginadmin"><AdminCreatePromos /></RequireAuth>} />
     </Routes>
   </BrowserRouter>
   )
