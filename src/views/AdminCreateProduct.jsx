@@ -32,7 +32,7 @@ const AdminCreateProduct = () => {
         <div>
             <Entete />
             <p>Create a new product</p>
-            <select value={inputCategory} onChange={(e) => setInputCategory(e.currentTarget.value)}>
+            <select value={inputCategory} onChange={(e) => setInputCategory(parseInt(e.currentTarget.value))}>
                 <option value={null}> -- select an option -- </option>
                 {categories.map((category) => (
                     <option key={category.id} value={category.id} label={category.name} />

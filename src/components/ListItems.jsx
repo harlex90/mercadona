@@ -29,12 +29,16 @@ const ItemCard = ({ product }) => {
     )
 }
 
-const ListItems = () => {
+const ListItems = ({ selectedCategory }) => {
     const { products } = useProducts();
+
+    const filteredProducts = selectedCategory ? 
+        products.filter((product) => product.category_id === selectedCategory)
+        : products;
 
     return(
         <div style={{display: "flex", justifyContent: "space-around", flexWrap: "wrap"}}>
-            {products.map((product) => <ItemCard product={product} />)}
+            {filteredProducts.map((product) => <ItemCard product={product} />)}
         </div>
     )
 }
