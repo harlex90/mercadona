@@ -1,4 +1,4 @@
-import ListPromos from "../assets/components/ListPromos";
+import ListPromos from "../components/ListPromos";
 import Entete from "./Entete";
 
 function Home() {

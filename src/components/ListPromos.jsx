@@ -1,7 +1,7 @@
-import caddie from "../../assets/caddie.jpg";
-import guitare from "../../assets/guitare.jpg";
-import fauteuil from "../../assets/fauteuil.jpg"
-import tableau from "../../assets/tableau.jpg"
+import caddie from "../assets/caddie.jpg";
+import guitare from "../assets/guitare.jpg";
+import fauteuil from "../assets/fauteuil.jpg"
+import tableau from "../assets/tableau.jpg"
 
 
 
