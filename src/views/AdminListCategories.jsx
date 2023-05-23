@@ -1,16 +1,10 @@
-import axios from "axios";
 import React from "react";
 import { useNavigate } from "react-router-dom";
+import useCategories from "../hooks/useCategories";
 import Entete from "./Entete";
 
 const AdminListCategories = () => {
-    const [categories, setCategories] = React.useState([]);
-
-    React.useEffect(() => {
-        axios.get('/categories').then((res) => {
-            setCategories(res.data)
-        })
-    }, []);
+    const { categories } = useCategories();
 
     const navigate = useNavigate();
     const onAddCategory = () => {
