@@ -24,6 +24,7 @@ const AdminListPromotions = () => {
                     <p style={{ margin: "0px" }}>id: {promo.id}</p>
                     <p style={{ margin: "0px" }}>product: {products.find((product) => product.id === promo.product_id)?.name}</p>
                     <p style={{ margin: "0px" }}>discount: {promo.discount}</p>
+                    <p style={{ margin: "0px" }}>initial price: {products.find((product) => product.id === promo.product_id)?.price}</p>
                     <p style={{ margin: "0px" }}>start_date: {new Date(promo.start_date).toString()}</p>
                     <p style={{ margin: "0px" }}>end_date: {new Date(promo.end_date).toString()}</p>
                 </div>

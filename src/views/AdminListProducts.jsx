@@ -1,12 +1,13 @@
-import axios from "axios";
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import useCategories from "../hooks/useCategories";
 import useProducts from "../hooks/useProducts";
+import usePromos from "../hooks/usePromos";
 import Entete from "./Entete";
 
 const AdminListProducts = () => {
     const { products } = useProducts();
+    const { promos } = usePromos();
     const { categories } = useCategories();
     const navigate = useNavigate();
 
@@ -26,6 +27,7 @@ const AdminListProducts = () => {
                         <p style={{ margin: "0px" }}>description: {product.description}</p>
                         <p style={{ margin: "0px" }}>price: {product.price}</p>
                         <p style={{ margin: "0px" }}>category: {categories.find((category) => category.id === product.category_id)?.name}</p>
+                        <p style={{ margin: "0px" }}>has promo: {promos.some((promo) => promo.product_id === product.id).toString()}</p> {/* TODO, find if the promo is now */}
                     </div>
                 ))}
             </div>
