@@ -3,12 +3,12 @@ import ListItems from "../components/ListItems";
 import useCategories from "../hooks/useCategories";
 
 const Catalogue = () => {
-    const categories = useCategories();
+    // const categories = useCategories();
 
     return(
         <div>
             <Entete />
-            <pre>{JSON.stringify(categories, null, 2)}</pre>
+            {/* <pre>{JSON.stringify(categories, null, 2)}</pre> */}
             <ListItems />
         </div>
     )

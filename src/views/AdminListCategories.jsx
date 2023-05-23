@@ -15,11 +15,14 @@ const AdminListCategories = () => {
         <div>
             <Entete />
             <button onClick={onAddCategory}>Add category</button>
+            <div style={{ display: "flex", flexDirection: "column", gap: "30px", margin: "20px 0px" }}>
             {categories.map((category) => (
-                <div>
-                    <p>name: {category.name}</p>
+                <div key={category.id} style={{ display: "flex", flexDirection: "column", gap: "10px" }}>
+                    <p style={{ margin: "0px" }}>id: {category.id}</p>
+                    <p style={{ margin: "0px" }}>name: {category.name}</p>
                 </div>
             ))}
+            </div>
         </div>
     )
 }

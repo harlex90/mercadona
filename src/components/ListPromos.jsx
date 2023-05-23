@@ -102,7 +102,7 @@ const PromoCard = ({ product }) => {
 
 const ListPromos = () => {
     return(
-            <div style={{display: "flex", justifyContent: "space-around"}}>
+            <div style={{display: "flex", justifyContent: "space-around", flexWrap: "wrap"}}>
                 {products.map((product) => <PromoCard product={product} />)}
             </div>
     )

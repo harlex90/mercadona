@@ -11,6 +11,8 @@ import LoginAdmin from "./views/LoginAdmin";
 import { AuthProvider, RequireAuth } from 'react-auth-kit'
 import AdminListCategories from './views/AdminListCategories'
 import AdminCreateCategories from './views/AdminCreateCategories'
+import AdminListProducts from "./views/AdminListProducts";
+import AdminCreateProduct from "./views/AdminCreateProduct";
 
 
 function Router() { 
@@ -24,6 +26,8 @@ function Router() {
       <Route path="/protected" element={<RequireAuth loginPath="/loginadmin"><p>coucou</p></RequireAuth>} />
       <Route path="/admin/categories" element={<RequireAuth loginPath="/loginadmin"><AdminListCategories /></RequireAuth>} />
       <Route path="/admin/categories/create" element={<RequireAuth loginPath="/loginadmin"><AdminCreateCategories /></RequireAuth>} />
+      <Route path="/admin/products" element={<RequireAuth loginPath="/loginadmin"><AdminListProducts /></RequireAuth>} />
+      <Route path="/admin/products/create" element={<RequireAuth loginPath="/loginadmin"><AdminCreateProduct /></RequireAuth>} />
     </Routes>
   </BrowserRouter>
   )
