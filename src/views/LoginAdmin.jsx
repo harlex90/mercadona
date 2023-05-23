@@ -19,7 +19,7 @@ function LoginAdmin() {
 
     const onSubmit = (e) => {
         e.preventDefault()
-        axios.post('http://108.61.176.171:8080/login', values)
+        axios.post('/login', values)
             .then((res)=>{
                 console.log(res)
                 if(res.status === 200){
@@ -39,8 +39,6 @@ function LoginAdmin() {
                 }
             })
     }
-
-    
     
     
     

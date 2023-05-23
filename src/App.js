@@ -29,7 +29,7 @@ function Router() {
 
 
 const App = () => (
-  <AuthProvider authType = {'cookie'}
+  <AuthProvider authType = {'localstorage'}
                 authName={'_auth'}
                 cookieDomain={window.location.hostname}
                 cookieSecure={window.location.protocol === "https:"}>
