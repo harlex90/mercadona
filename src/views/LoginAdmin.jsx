@@ -43,7 +43,7 @@ function LoginAdmin() {
     
     
     return (
-        <div style={{marginTop: "30px"}}>
+        <div>
             <Entete/>
             <div>
                 <h3 style={{display: "flex", justifyContent:"center", marginTop: "30px"}}>

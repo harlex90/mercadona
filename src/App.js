@@ -6,11 +6,11 @@ import {
 } from "react-router-dom";
 import Home from './views/Home';
 import './App.css';
-import Entete from "./views/Entete";
 import Catalogue from "./views/Catalogue";
 import LoginAdmin from "./views/LoginAdmin";
 import { AuthProvider, RequireAuth } from 'react-auth-kit'
-
+import AdminListCategories from './views/AdminListCategories'
+import AdminCreateCategories from './views/AdminCreateCategories'
 
 
 function Router() { 
@@ -22,6 +22,8 @@ function Router() {
       <Route path="/catalogue" element={<Catalogue />} />
       <Route path="/loginadmin" element={<LoginAdmin />} />
       <Route path="/protected" element={<RequireAuth loginPath="/loginadmin"><p>coucou</p></RequireAuth>} />
+      <Route path="/admin/categories" element={<RequireAuth loginPath="/loginadmin"><AdminListCategories /></RequireAuth>} />
+      <Route path="/admin/categories/create" element={<RequireAuth loginPath="/loginadmin"><AdminCreateCategories /></RequireAuth>} />
     </Routes>
   </BrowserRouter>
   )
