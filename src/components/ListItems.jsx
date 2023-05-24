@@ -37,7 +37,7 @@ const ListItems = ({ selectedCategory }) => {
         : products;
 
     return(
-        <div style={{display: "flex", justifyContent: "space-around", flexWrap: "wrap"}}>
+        <div style={{display: "flex", flexWrap: "wrap"}}>
             {filteredProducts.map((product) => <ItemCard product={product} />)}
         </div>
     )

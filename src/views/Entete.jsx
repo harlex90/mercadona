@@ -1,3 +1,5 @@
+import { useIsAuthenticated, useSignOut } from "react-auth-kit";
+import { useNavigate } from "react-router-dom";
 import caddie from "../assets/caddie.jpg";
 
 const entete = {
@@ -7,6 +9,14 @@ const entete = {
 };
 
 function Entete() {
+    const isAuthenticated = useIsAuthenticated();
+    const signout = useSignOut()
+    const navigate = useNavigate();
+
+    const onSignout = () => {
+       signout();
+       navigate('/')
+    }
     return (
         <div>
             <div>
@@ -14,6 +24,7 @@ function Entete() {
                     <ul>
                         <li><a href="/home">Home</a></li>
                         <li><a href="/catalogue">Catalogue</a></li>
+                        {isAuthenticated() && <li><a href="#" onClick={onSignout}>Signout</a></li>}
                     </ul>
                     <div style={{display: "flex", justifyContent:"center", gap: 10, alignItems: "center"}}>
                         <h1 className="title">{entete.title}</h1>
