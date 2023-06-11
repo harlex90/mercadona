@@ -1,73 +1,15 @@
+import React from 'react';
+import moment from 'moment';
+
+import usePromos from "../hooks/usePromos";
+import useProducts from "../hooks/useProducts";
+
 import caddie from "../assets/caddie.jpg";
 import guitare from "../assets/guitare.jpg";
 import fauteuil from "../assets/fauteuil.jpg"
 import tableau from "../assets/tableau.jpg"
 
-
-
-const products = [
-    {
-        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-        "id": 1,
-        "image": guitare,
-        "name": "Guitare bleu",
-        "category_id": "1",
-        "price": "1000€", 
-        "new_price": "700€",
-        "start_date": "4 mai 2023",
-        "end_date": "1 juin 2023"
-    }, {
-        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.", 
-        "id": 2, 
-        "image": caddie, 
-        "name": "Guitare rouge",
-        "category_id": "2", 
-        "price": "1100€",
-        "new_price": "750€",
-        "start_date": "30 avril 2023",
-        "end_date": "12 juin 2023"
-    }, {
-        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-        "id": 1,
-        "image": fauteuil,
-        "name": "Fauteuil",
-        "category_id": "3",
-        "price": "1000€", 
-        "new_price": "700€",
-        "start_date": "4 mai 2023",
-        "end_date": "1 juin 2023"
-    }, {
-        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.", 
-        "id": 2, 
-        "image": tableau, 
-        "name": "Tableau",
-        "category_id": "3",
-        "price": "1100€",
-        "new_price": "750€",
-        "start_date": "30 avril 2023",
-        "end_date": "12 juin 2023"
-    }, {
-        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-        "id": 1,
-        "image": guitare,
-        "name": "Guitare bleu",
-        "category_id": "1",
-        "price": "1000€", 
-        "new_price": "700€",
-        "start_date": "4 mai 2023",
-        "end_date": "1 juin 2023"
-    }, {
-        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.", 
-        "id": 2, 
-        "image": caddie, 
-        "name": "Guitare rouge",
-        "category_id": "2",
-        "price": "1100€",
-        "new_price": "750€",
-        "start_date": "30 avril 2023",
-        "end_date": "12 juin 2023"
-    }
-];
+const images = [caddie, guitare, fauteuil, tableau];
 
 const PromoCard = ({ product }) => {
     return(
@@ -77,7 +19,7 @@ const PromoCard = ({ product }) => {
                 <div style={{display: "flex", justifyContent: "center"}}>
                     <img
                         src={product.image}
-                        alt={"product image"} 
+                        alt={product.name} 
                         style={{display: "flex", justifyContent: "center", width: 150, height: 150}}
                     />
                 </div>
@@ -89,8 +31,8 @@ const PromoCard = ({ product }) => {
                             <p style={{fontSize:"12px", color: "red", margin: "0px"}}>au {product.end_date}</p>
                         </div>
                         <div>
-                            <p style={{textDecoration: "line-through", margin: "1px"}}>{product.price}</p>
-                            <p style={{margin: "1px", color: "red", fontSize: "25px"}}>{product.new_price}</p>
+                            <p style={{textDecoration: "line-through", margin: "1px"}}>{`${product.price} €`}</p>
+                            <p style={{margin: "1px", color: "red", fontSize: "25px"}}>{`${product.new_price} €`}</p>
                         </div>
                     </div>
                 </div>
@@ -100,11 +42,37 @@ const PromoCard = ({ product }) => {
     )
 }
 
+function randomChoiceImage() {
+    return images[Math.floor(images.length * Math.random())];
+}
+
 const ListPromos = () => {
+    const { promos } = usePromos();
+    const { products } = useProducts();
+
+    const promoProducts = React.useMemo(() => {
+        if(promos.length < 1 || products.length < 1) return [];
+
+        return promos.map((promo) => {
+            const product = products.find(product => promo.product_id === product.id);
+            return ({
+                id: promo.id,
+                description: product.description, 
+                image: randomChoiceImage(), 
+                name: product.name,
+                category_id: product.category_id,
+                price: product.price,
+                new_price: parseFloat((product.price * promo.discount).toFixed(2)),
+                start_date: moment(promo.start_date).format('LL'),
+                end_date: moment(promo.end_date).format('LL'),
+            });
+        });
+    }, [promos, products]);
+
     return(
-            <div style={{display: "flex", justifyContent: "space-around", flexWrap: "wrap"}}>
-                {products.map((product) => <PromoCard product={product} />)}
-            </div>
+        <div style={{display: "flex", justifyContent: "space-around", flexWrap: "wrap", gap: "20px"}}>
+            {promoProducts.map((product) => <PromoCard key={product.id} product={product} />)}
+        </div>
     )
 }
 

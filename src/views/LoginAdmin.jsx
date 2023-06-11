@@ -13,9 +13,9 @@ function LoginAdmin() {
 
     React.useEffect(() => {
         if(isAuthenticated()) {
-            navigate('/protected');
+            navigate('/admin/products');
         }
-    }, [isAuthenticated])
+    }, [isAuthenticated, navigate])
 
     const onSubmit = (e) => {
         e.preventDefault()
@@ -32,7 +32,7 @@ function LoginAdmin() {
                             
                         }
                     )){ 
-                        navigate('/protected');
+                        navigate('/admin/products');
                     }else {
                         alert("Invalid email or password")
                     }

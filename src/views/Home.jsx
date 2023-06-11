@@ -5,10 +5,7 @@ function Home() {
     return (
         <div>
            <Entete />
-           <ListPromos />
-
-           <p>home</p>
-            
+           <ListPromos />            
         </div>
     )
 }

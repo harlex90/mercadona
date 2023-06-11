@@ -25,7 +25,6 @@ function Router() {
       <Route path="/home" element={<Home />} />
       <Route path="/catalogue" element={<Catalogue />} />
       <Route path="/loginadmin" element={<LoginAdmin />} />
-      <Route path="/protected" element={<RequireAuth loginPath="/loginadmin"><p>coucou</p></RequireAuth>} />
       <Route path="/admin/categories" element={<RequireAuth loginPath="/loginadmin"><AdminListCategories /></RequireAuth>} />
       <Route path="/admin/categories/create" element={<RequireAuth loginPath="/loginadmin"><AdminCreateCategories /></RequireAuth>} />
       <Route path="/admin/products" element={<RequireAuth loginPath="/loginadmin"><AdminListProducts /></RequireAuth>} />
