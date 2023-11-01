@@ -1,14 +1,13 @@
 import ListPromos from "../components/ListPromos";
 import Entete from "./Entete";
+import Footer from "./Footer";
 
 function Home() {
     return (
-        <div>
+        <div style={{display: "flex", flexDirection: "column", minHeight: "1OOvh"}}>
            <Entete />
            <ListPromos />
-
-           <p>home</p>
-            
+           <Footer />
         </div>
     )
 }

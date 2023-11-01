@@ -1,26 +1,2 @@
-nav {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-}
-
-.title {
-  text-align: center;
-}
-
-ul {
-  display: flex;
-  list-style-type: none;
-  width: fit-content;
-  align-items: center;
-}
-
-li {
-  display: inline;
-  padding: 8px;
-}
-
-
-
-
 
 
