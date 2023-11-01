@@ -1,77 +1,12 @@
 import React, { useState } from 'react';
+import moment from 'moment';
+
 import caddie from "../assets/caddie.jpg";
 import guitare from "../assets/guitare.jpg";
 import fauteuil from "../assets/fauteuil.jpg"
 import tableau from "../assets/tableau.jpg"
 import usePromos from '../hooks/usePromos';
 import useProducts from '../hooks/useProducts';
-import moment from 'moment';
-
-
-
-// const products = [
-//     {
-//         description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-//         id: 1,
-//         image: guitare,
-//         name: "Guitare bleu",
-//         category_id: "1",
-//         price: "1000€", 
-//         new_price: "700€",
-//         start_date: "4 mai 2023",
-//         end_date: "1 juin 2023"
-//     }, {
-//         description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.", 
-//         id: 2, 
-//         image: caddie, 
-//         name: "Guitare rouge",
-//         category_id: "2", 
-//         price: "1100€",
-//         new_price: "750€",
-//         start_date: "30 avril 2023",
-//         end_date: "12 juin 2023"
-//     }, {
-//         description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-//         id: 3,
-//         image: fauteuil,
-//         name: "Fauteuil",
-//         category_id: "3",
-//         price: "1000€", 
-//         new_price: "700€",
-//         start_date: "4 mai 2023",
-//         end_date: "1 juin 2023"
-//     }, {
-//         description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.", 
-//         id: 4, 
-//         image: tableau, 
-//         name: "Tableau",
-//         category_id: "4",
-//         price: "1100€",
-//         new_price: "750€",
-//         start_date: "30 avril 2023",
-//         end_date: "12 juin 2023"
-//     }, {
-//         description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-//         id: 5,
-//         image: guitare,
-//         name: "Guitare bleu",
-//         category_id: "5",
-//         price: "1000€", 
-//         new_price: "700€",
-//         start_date: "4 mai 2023",
-//         end_date: "1 juin 2023"
-//     }, {
-//         description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.", 
-//         id: 6, 
-//         image: caddie, 
-//         name: "Guitare rouge",
-//         category_id: "6",
-//         price: "1100€",
-//         new_price: "750€",
-//         start_date: "30 avril 2023",
-//         end_date: "12 juin 2023"
-//     }
-// ];
 
 export const ItemCard = ({ product }) => {
     const [description, setDescription] = useState(false);
@@ -95,7 +30,7 @@ export const ItemCard = ({ product }) => {
                 <div style={{display: "flex", justifyContent: "center"}}>
                     <img
                         src={product.image}
-                        alt={"product image"} 
+                        alt={product.name} 
                         style={{display: "flex", justifyContent: "center", width: 150, height: 150}}
                     />
                 </div>
@@ -127,6 +62,10 @@ export const ItemCard = ({ product }) => {
             </div>
         </div>
     )
+}
+
+function randomChoiceImage() {
+    return images[Math.floor(images.length * Math.random())];
 }
 
 const ListPromos = () => {

@@ -4,6 +4,10 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import axios from "axios";
+import moment from 'moment';
+import "moment/locale/fr";
+
+moment.locale('fr');
 
 // setup base API url from ENV for dev and production conformity
 axios.defaults.baseURL = "http://108.61.176.171:8080";
