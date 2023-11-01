@@ -89,7 +89,7 @@ const ListPromos = () => {
             ...promo,
             ...product,
             new_price: product.price * promo.discount,
-            image: caddie,
+            image: randomChoiceImage(),
             id: promo.id,
         })
     });
