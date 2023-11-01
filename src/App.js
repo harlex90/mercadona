@@ -5,9 +5,9 @@ import {
   Navigate,
 } from "react-router-dom";
 import Home from './views/Home';
-import './App.css';
 import Catalogue from "./views/Catalogue";
 import LoginAdmin from "./views/LoginAdmin";
+import About from "./views/About";
 import { AuthProvider, RequireAuth } from 'react-auth-kit'
 import AdminListCategories from './views/AdminListCategories'
 import AdminCreateCategories from './views/AdminCreateCategories'
@@ -15,6 +15,7 @@ import AdminListProducts from "./views/AdminListProducts";
 import AdminCreateProduct from "./views/AdminCreateProduct";
 import AdminListPromotions from "./views/AdminListPromotions";
 import AdminCreatePromos from "./views/AdminCreatePromotions";
+import AdminDeleteProduct from "./views/AdminDeleteProduct";
 
 
 function Router() { 
@@ -31,6 +32,7 @@ function Router() {
       <Route path="/admin/products/create" element={<RequireAuth loginPath="/loginadmin"><AdminCreateProduct /></RequireAuth>} />
       <Route path="/admin/promos" element={<RequireAuth loginPath="/loginadmin"><AdminListPromotions /></RequireAuth>} />
       <Route path="/admin/promos/create" element={<RequireAuth loginPath="/loginadmin"><AdminCreatePromos /></RequireAuth>} />
+      <Route path="/admin/products/delete" element={<RequireAuth loginPath="/loginadmin"><AdminDeleteProduct /></RequireAuth>} />
     </Routes>
   </BrowserRouter>
   )
@@ -38,10 +40,12 @@ function Router() {
 
 
 const App = () => (
+  
   <AuthProvider authType = {'localstorage'}
                 authName={'_auth'}
                 cookieDomain={window.location.hostname}
-                cookieSecure={window.location.protocol === "https:"}>
+                cookieSecure={window.location.protocol === "https:"}
+                >
       <Router />
   </AuthProvider>
 );
