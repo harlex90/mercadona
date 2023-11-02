@@ -65,6 +65,8 @@ export const ItemCard = ({ product }) => {
 }
 
 function randomChoiceImage() {
+
+    const images = [caddie, guitare, fauteuil, tableau]
     return images[Math.floor(images.length * Math.random())];
 }
 
