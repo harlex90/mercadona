@@ -32,8 +32,10 @@ const ListItems = ({ selectedCategory }) => {
     });
 
     return(
-        <div style={{display: "flex", flexWrap: "wrap"}}>
-            {items.map((product) => <ItemCard key={product.id} product={product} />)}
+        <div className='flex flex-col'>
+            <div style={{display: "flex", flexWrap: "wrap"}}>
+                {items.map((product) => <ItemCard key={product.id} product={product} />)}
+            </div>
             <div style={{display: "flex", justifyContent: "center", alignItems: "center", gap: "50px"}}>
                 <AdminProductButtons/>
             </div>

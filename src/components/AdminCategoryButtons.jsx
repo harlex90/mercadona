@@ -20,12 +20,12 @@ const AdminCategoryButtons = () => {
     }
 
     return(
-        <div style={{display: "flex", flexDirection: "column", alignItems: "center", gap: "5%", marginBottom: "5%", width: "100%"}}>
+        <div style={{display: "flex", flexDirection: "column", alignItems: "start", gap: "5px", marginBottom: "20px", marginTop: "80px"}}>
           {isAuthenticated() && (
-            <h3 style={{display: "flex", marginLeft: "10%", gap: "100px", width: "100%"}}>
+            <h3 style={{marginLeft: "10%"}}>
               CATEGORIES
             </h3>)}
-            <div style={{display: "flex", marginLeft: "10%", gap: "100px", width: "100%"}}>
+            <div style={{display: "flex", marginLeft: "10%", gap: "100px"}}>
               <div style={{display: "flex", gap: "80px"}}>
                 {categories.map((category) => <ItemCategory key={category.id} category={category} />)}
               </div>
