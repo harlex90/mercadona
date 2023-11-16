@@ -1,45 +1,39 @@
-import Entete from "./Entete";
+import TitleAndLogo from "../components/TitleAndLogo";
+import Navbar from "../components/Navbar";
 import ListItems from "../components/ListItems";
-import AdminProductButtons from "../components/AdminProductButtons";
 import AdminCategoryButtons from "../components/AdminCategoryButtons";
+import Footer from "./Footer";
 import useCategories from "../hooks/useCategories";
 import { useState } from "react";
-import { useIsAuthenticated, useSignOut, useSignIn } from "react-auth-kit";
-import { Link, Navigate, useNavigate } from "react-router-dom";
+
 
 const Catalogue = () => {
-    // const categories = useCategories();
     const [selectedCategory, setSelectedCategory] = useState()
     const {categories} = useCategories()
 
     return(
-        <div>
-            <Entete />
-            {/* <pre>{JSON.stringify(categories, null, 2)}</pre> */}
-            <select value={selectedCategory} onChange={(e) => setSelectedCategory(parseInt(e.currentTarget.value))}>
-                <option value={null}> -- Tous les produits -- </option>
-                {categories.map((category) => (
-                    <option key={category.id} value={category.id} label={category.name} />
-                ))}
-            </select>
-            <ListItems selectedCategory={selectedCategory}
-             />
-
-            <AdminProductButtons/>
-            <AdminCategoryButtons/>
-            
-        
+        <div style={{display: "flex", flexDirection: "column", minHeight: "100vh"}}>
+                <div style={{display: "flex", alignItems: "center", marginTop: "70px", marginBottom: "70px", width: "100%"}}>
+                    <TitleAndLogo/>
+                    <div style={{display: "flex", justifyContent: "center", flex: "2 1 10%"}}>
+                        <Navbar/>
+                    </div>
+                    {/* <pre>{JSON.stringify(categories, null, 2)}</pre> */}
+                    <div style={{display: "flex", flex: "1 1 10%", justifyContent: "center", alignItems: "center"}}>
+                        <select value={selectedCategory} onChange={(e) => setSelectedCategory(parseInt(e.currentTarget.value))}>
+                            <option value={null}> -- Tous les produits -- </option>
+                            {categories.map((category) => (
+                                <option key={category.id} value={category.id} label={category.name} />
+                            ))}
+                        </select>
+                    </div>
+                </div>
+                <ListItems selectedCategory={selectedCategory}/>
+                
+                <AdminCategoryButtons/>
+                <Footer/>
         </div>
     )
 }
-
-
-
-
-
-
-    
-    
-
 
 export default Catalogue;

@@ -2,7 +2,8 @@ import axios from "axios";
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import useCategories from "../hooks/useCategories";
-import Entete from "./Entete";
+import TitleAndLogo from "../components/TitleAndLogo";
+import Navbar from "../components/Navbar";
 
 const AdminCreateProduct = () => {
     const { categories } = useCategories();
@@ -15,7 +16,7 @@ const AdminCreateProduct = () => {
     const navigate = useNavigate();
     const onSubmit = () => {
         if(!inputCategory) {
-            alert("you must choose a category")
+            alert("Vous devez choisir une catégorie")
             return;
         }
 
@@ -25,23 +26,39 @@ const AdminCreateProduct = () => {
             description: inputDescription,
             price: inputPrice
         }).then(() => {
-            navigate('/admin/products')
+            navigate('/catalogue')
         })
     }
     return (
         <div>
-            <Entete />
-            <p>Create a new product</p>
-            <select value={inputCategory} onChange={(e) => setInputCategory(parseInt(e.currentTarget.value))}>
-                <option value={null}> -- select an option -- </option>
-                {categories.map((category) => (
-                    <option key={category.id} value={category.id} label={category.name} />
-                ))}
-            </select>
-            <input type="text" value={inputName} onChange={(e) => setInputName(e.currentTarget.value)} placeholder="name of the product"/>
-            <input type="text" value={inputDescription} onChange={(e) => setInputDescription(e.currentTarget.value)} placeholder="description of the product"/>
-            <input type="number" value={inputPrice} onChange={(e) => setInputPrice(e.currentTarget.value)} placeholder="price of the product"/>
-            <button onClick={onSubmit}>Submit</button>
+            <div style={{display: "flex", alignItems: "center", marginTop: "70px", marginBottom: "70px"}}>
+                <TitleAndLogo/>
+                <div style={{display: "flex", justifyContent: "center", flex: "2 1 10%"}}>
+                    <Navbar/>
+                </div>
+                <div style={{display: "flex", flex: "1 1 10%"}}>
+
+                </div>
+            </div>
+            <div style={{display: "flex", flexDirection: "column", marginLeft: "10%"}}>
+                <div>
+                    <h3>
+                        Créer un nouveau produit
+                    </h3>
+                </div>
+                <div>
+                    <select value={inputCategory} onChange={(e) => setInputCategory(parseInt(e.currentTarget.value))}>
+                        <option value={null}> -- select an option -- </option>
+                        {categories.map((category) => (
+                        <option key={category.id} value={category.id} label={category.name} />
+                        ))}
+                    </select>
+                    <input type="text" value={inputName} onChange={(e) => setInputName(e.currentTarget.value)} placeholder="nom du produit"/>
+                    <input type="text" value={inputDescription} onChange={(e) => setInputDescription(e.currentTarget.value)} placeholder="description du produit"/>
+                    <input type="number" value={inputPrice} onChange={(e) => setInputPrice(e.currentTarget.value)} placeholder="prix du produit"/>
+                    <button onClick={onSubmit}>Entrer</button>
+                </div>
+            </div>
         </div>
     )
 }

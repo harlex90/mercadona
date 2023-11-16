@@ -1,24 +1,24 @@
 import axios from "axios";
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import useProducts from "../hooks/useProducts";
+import useCategories from "../hooks/useCategories";
 import TitleAndLogo from "../components/TitleAndLogo";
 import Navbar from "../components/Navbar";
 
 
-const AdminDeleteProduct = () => {
-    const { products } = useProducts();
+const AdminDeleteCategory = () => {
+    const { categories } = useCategories();
     
-    const [inputProduct, setInputProduct] = React.useState();
+    const [inputCategory, setInputCategory] = React.useState();
     
     const navigate = useNavigate();
     const onSubmit = () => {
-        if(!inputProduct) {
-            alert("Vous devez choisir un produit")
+        if(!inputCategory) {
+            alert("Vous devez choisir une catégorie")
             return;
         }
-        axios.delete(`/products/${inputProduct}`).then(() => {
-            navigate('/catalogue')
+        axios.delete(`/categories/${inputCategory}`).then(() => {
+            navigate('/admin/categories')
         })
     }
     return (
@@ -32,15 +32,16 @@ const AdminDeleteProduct = () => {
 
                 </div>
             </div>
+
             <div style={{display: "flex", flexDirection: "column", marginLeft: "10%"}}>
                 <div>
-                    <h3>Supprimer un produit</h3>
+                    <h3>Supprimer une catégorie</h3>
                 </div>
                 <div>
-                    <select value={inputProduct} onChange={(e) => setInputProduct(parseInt(e.currentTarget.value))}>
-                        <option value={null}> -- Choisissez un produit -- </option>
-                        {products.map((product) => (
-                        <option key={product.id} value={product.id} label={product.name} />
+                    <select value={inputCategory} onChange={(e) => setInputCategory(parseInt(e.currentTarget.value))}>
+                        <option value={null}> -- Choisissez une catégorie -- </option>
+                        {categories.map((category) => (
+                        <option key={category.id} value={category.id} label={category.name} />
                         ))}
                     </select>
                     <button onClick={onSubmit}>Supprimer</button>
@@ -51,4 +52,4 @@ const AdminDeleteProduct = () => {
     )
 }
 
-export default AdminDeleteProduct;
+export default AdminDeleteCategory;

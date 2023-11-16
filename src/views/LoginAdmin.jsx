@@ -1,4 +1,5 @@
-import Entete from "./Entete";
+import TitleAndLogo from "../components/TitleAndLogo";
+import Navbar from "../components/Navbar";
 import { useIsAuthenticated, useSignIn } from 'react-auth-kit'
 import React from "react";
 import axios from "axios";
@@ -13,7 +14,7 @@ function LoginAdmin() {
 
     React.useEffect(() => {
         if(isAuthenticated()) {
-            navigate('/admin/products');
+            navigate('/catalogue');
         }
     }, [isAuthenticated, navigate])
 
@@ -32,7 +33,7 @@ function LoginAdmin() {
                             
                         }
                     )){ 
-                        navigate('/admin/products');
+                        navigate('/catalogue');
                     }else {
                         alert("Invalid email or password")
                     }
@@ -40,29 +41,37 @@ function LoginAdmin() {
             })
     }
     
-    
-    
     return (
         <div>
-            <Entete/>
-            <div>
-                <h3 style={{display: "flex", justifyContent:"center", marginTop: "30px"}}>
-                    Login
-                </h3>
+            <div style={{display: "flex", alignItems: "center", marginTop: "70px", marginBottom: "70px"}}>
+                <TitleAndLogo/>
+                <div style={{display: "flex", justifyContent: "center", flex: "2 1 10%"}}>
+                    <Navbar/>
+                </div>
+                <div style={{display: "flex", flex: "1 1 10%"}}>
+
+                </div>
             </div>
-            <div style={{display: "flex", justifyContent:"center", marginTop: "50px"}}>
-                <form onSubmit={onSubmit}>
-                    <label style={{padding: "10px"}}>Email</label>
-                    <input type="email" name="email" placeholder="Saisissez votre adresse email" value={values.email} onChange={(e)=>setValues({...values, email: e.target.value})}/>
+            <div style={{display: "flex", flexDirection: "column", marginLeft: "10%"}}>
+                <div style={{marginBottom: "2%"}}>
+                    <h3>
+                        Login
+                    </h3>
+                </div>
+                <div>
+                    <form onSubmit={onSubmit}>
+                        <label style={{paddingRight: "10px"}}>Email</label>
+                        <input type="email" name="email" placeholder="Saisissez votre adresse email" value={values.email} onChange={(e)=>setValues({...values, email: e.target.value})}/>
             
-                    <label style={{padding: "10px"}}>Password</label>
-                    <input type="password" name="password" placeholder="Saisissez votre mot de passe" value={values.password} onChange={(e)=>setValues({...values, password: e.target.value})}/>
-                    <div style={{display: "flex", justifyContent:"center", marginTop: "50px"}}>
-                            <button appearance = 'ghost' color="violet" type="submit" style={{width: 150}}>
-                                Sign in
-                            </button>
-                    </div>
-                </form>
+                        <label style={{padding: "10px"}}>Password</label>
+                        <input type="password" name="password" placeholder="Saisissez votre mot de passe" value={values.password} onChange={(e)=>setValues({...values, password: e.target.value})}/>
+                        <div style={{display: "flex", marginTop: "2%"}}>
+                                <button appearance = 'ghost' color="violet" type="submit" style={{width: 150}}>
+                                    Sign in
+                                </button>
+                        </div>
+                    </form>
+                </div>
             </div>
            
         </div>

@@ -10,7 +10,8 @@ import "moment/locale/fr";
 moment.locale('fr');
 
 // setup base API url from ENV for dev and production conformity
-axios.defaults.baseURL = "http://108.61.176.171:8080";
+// axios.defaults.baseURL = "http://108.61.176.171:8080";
+axios.defaults.baseURL = "http://127.0.0.1:8080";
 
 // add the auth token to the request
 axios.interceptors.request.use((config) => {

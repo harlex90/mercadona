@@ -3,7 +3,9 @@ import { useNavigate } from "react-router-dom";
 import useCategories from "../hooks/useCategories";
 import useProducts from "../hooks/useProducts";
 import usePromos from "../hooks/usePromos";
-import Entete from "./Entete";
+import TitleAndLogo from "../components/TitleAndLogo";
+import Navbar from "../components/Navbar";
+
 
 const AdminListProducts = () => {
     const { products } = useProducts();
@@ -17,7 +19,15 @@ const AdminListProducts = () => {
 
     return (
         <div>
-            <Entete />
+            <div style={{display: "flex", alignItems: "center", marginTop: "70px", marginBottom: "70px"}}>
+                <TitleAndLogo/>
+                <div style={{display: "flex", justifyContent: "center", flex: "2 1 10%"}}>
+                    <Navbar/>
+                </div>
+                <div style={{display: "flex", flex: "1 1 10%"}}>
+
+                </div>
+            </div>
             <button onClick={onAddProduct}>Add products</button>
             <div style={{ display: "flex", flexDirection: "column", gap: "30px", margin: "20px 0px" }}>
                 {products.map((product) => (
