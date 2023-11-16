@@ -5,6 +5,8 @@ import { useNavigate } from "react-router-dom";
 import caddie from "../assets/caddie.jpg";
 import usePromos from '../hooks/usePromos';
 import useProducts from '../hooks/useProducts';
+import { groupBy } from 'lodash';
+import findMaxPromo from '../assets/utils/findMaxPromo';
 
 export const ItemCard = ({ product }) => {
     const isAuthenticated = useIsAuthenticated();
@@ -105,9 +107,22 @@ export const ItemCard = ({ product }) => {
 const ListPromos = () => {
     const { products } = useProducts();
     const { promos } = usePromos();
+    const { promos: allPromos } = usePromos();
+
+    const now = Date.now() / 1000; // TODO remove /1000 when backend fixed
+    const validPromos = allPromos.filter((prom) => {
+        return (prom.start_date < now && prom.end_date > now)
+    });
+
+    const promosByProducts = groupBy(validPromos, (promo) => promo.product_id);
+    const productsPromos = Object.keys(promosByProducts).map((key) => {
+       const promosByProduct = promosByProducts[key];
+       const betterDiscount = findMaxPromo(promosByProduct);
+       return betterDiscount;
+    });
 
     const items = [];
-    promos.forEach((promo) => {
+    productsPromos.forEach((promo) => {
         const product = products.find((prod) => {
             return (prod.id === promo.product_id)
         })
