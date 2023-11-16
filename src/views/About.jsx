@@ -1,43 +1,29 @@
-import Entete from "./Entete";
+import TitleAndLogo from "../components/TitleAndLogo";
+import Navbar from "../components/Navbar";
+import Footer from "./Footer";
 
 const About = () => {
     return(
         <div>
-            <div>
-                <Entete/>
+            <div style={{display: "flex", alignItems: "center", marginTop: "70px", marginBottom: "70px"}}>
+                <TitleAndLogo/>
+                <div style={{display: "flex", justifyContent: "center", flex: "2 1 10%"}}>
+                    <Navbar/>
+                </div>
+                <div style={{display: "flex", flex: "1 1 10%"}}>
+
+                </div>
             </div>
-            <div style={{display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center"}}>
-             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
-            sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-            Duis ultricies lacus sed turpis tincidunt id aliquet risus. 
-            Habitant morbi tristique senectus et. Integer vitae justo eget magna. 
-            Consequat mauris nunc congue nisi vitae. Nisi vitae suscipit tellus mauris a 
-            diam maecenas sed. Sodales ut eu sem integer. Luctus accumsan tortor posuere 
-            ac ut consequat semper viverra nam. Purus viverra accumsan in nisl. 
-            Ultricies leo integer malesuada nunc vel. Justo nec ultrices dui sapien eget 
-            mi proin sed. Tristique nulla aliquet enim tortor at auctor urna nunc. 
-            Semper feugiat nibh sed pulvinar proin. Eget mi proin sed libero enim sed faucibus. 
-            Amet risus nullam eget felis. 
-            In ornare quam viverra orci sagittis eu volutpat odio facilisis. 
-            Aliquam sem et tortor consequat id porta nibh. 
-            Lacus suspendisse faucibus interdum posuere. 
-            Nam libero justo laoreet sit amet cursus sit.</p>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
-            sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-            Duis ultricies lacus sed turpis tincidunt id aliquet risus. 
-            Habitant morbi tristique senectus et. Integer vitae justo eget magna. 
-            Consequat mauris nunc congue nisi vitae. Nisi vitae suscipit tellus mauris a 
-            diam maecenas sed. Sodales ut eu sem integer. Luctus accumsan tortor posuere 
-            ac ut consequat semper viverra nam. Purus viverra accumsan in nisl. 
-            Ultricies leo integer malesuada nunc vel. Justo nec ultrices dui sapien eget 
-            mi proin sed. Tristique nulla aliquet enim tortor at auctor urna nunc. 
-            Semper feugiat nibh sed pulvinar proin. Eget mi proin sed libero enim sed faucibus. 
-            Amet risus nullam eget felis. 
-            In ornare quam viverra orci sagittis eu volutpat odio facilisis. 
-            Aliquam sem et tortor consequat id porta nibh. 
-            Lacus suspendisse faucibus interdum posuere. 
-            Nam libero justo laoreet sit amet cursus sit.</p>
+            <div style={{display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center", margin: "10%", fontSize: "20px"}}>
+                <h3 style={{marginBottom: "80px"}}>Mercadona : Un géant du retail innovant et écologiquement conscients</h3>
+             <p>Forte de ses 1675 établissements répartis sur le territoire espagnol, Mercadona s'impose comme un pilier majeur dans le domaine du retail. Avec un chiffre d'affaires spectaculaire de 20 milliards d'euros, notre entreprise illustre son succès à travers une politique de prix compétitifs et des promotions régulières. Ainsi, nous nous assurons que nos clients peuvent toujours trouver une sélection d'au moins une centaine de produits en promotion, tout au long de l'année.</p>
+
+<p>Toutefois, conscient de l'importance grandissante de la dimension écologique dans notre secteur, Mercadona a décidé de marquer un tournant dans sa stratégie de communication. Jusqu'à présent, notre communication a principalement reposé sur l'utilisation de tracts publicitaires. 
+    Cependant, dans un effort pour économiser les ressources et minimiser notre impact environnemental, nous envisageons désormais une transition vers le numérique.
+
+Ainsi, nous sommes actuellement en train de développer une application web innovante, qui permettra à nos clients d'accéder à nos promotions et de découvrir nos produits à partir de leurs appareils connectés. Ce changement traduit notre engagement à adopter des pratiques plus durables, tout en améliorant l'expérience de nos clients.</p>
             </div>
+            <Footer />
         </div>
 
     )

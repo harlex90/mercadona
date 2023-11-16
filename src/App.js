@@ -6,6 +6,7 @@ import {
 } from "react-router-dom";
 import Home from './views/Home';
 import Catalogue from "./views/Catalogue";
+import About from "./views/About";
 import LoginAdmin from "./views/LoginAdmin";
 import { AuthProvider, RequireAuth } from 'react-auth-kit'
 import AdminListCategories from './views/AdminListCategories'
@@ -24,6 +25,7 @@ function Router() {
       <Route path="/" element={<Navigate to="/home" />} />
       <Route path="/home" element={<Home />} />
       <Route path="/catalogue" element={<Catalogue />} />
+      <Route path="/about" element={<About />} />
       <Route path="/loginadmin" element={<LoginAdmin />} />
       <Route path="/admin/categories" element={<RequireAuth loginPath="/loginadmin"><AdminListCategories /></RequireAuth>} />
       <Route path="/admin/categories/create" element={<RequireAuth loginPath="/loginadmin"><AdminCreateCategories /></RequireAuth>} />
