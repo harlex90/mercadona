@@ -28,9 +28,12 @@ const Catalogue = () => {
                         </select>
                     </div>
                 </div>
-                <ListItems selectedCategory={selectedCategory}/>
-                
+                <div style={{display: "flex", justifyContent: "center", marginLeft: "5%"}}>
+                  <ListItems selectedCategory={selectedCategory}/>
+                </div>
+                <div style={{display: "flex", marginLeft: "5%"}}>
                 <AdminCategoryButtons/>
+                </div>
                 <Footer/>
         </div>
     )
