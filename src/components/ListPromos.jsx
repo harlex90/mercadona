@@ -49,7 +49,7 @@ export const ItemCard = ({ product }) => {
                     {isAuthenticated() && (
                     <button 
                         type='button' 
-                        style={{display:"flex", justifyContent: "center", alignItems: "center", backgroundColor: "white", border: isCardHover ? "1px solid gray" : "none", borderRadius: "10%"}}
+                        style={{display:"flex", justifyContent: "center", alignItems: "center", backgroundColor: "white", border: isCardHover ? "1px solid gray" : "none", borderRadius: "10%", overflow: 'hidden'}}
                         onMouseEnter={handleMouseEnterCard}
                         onMouseLeave={handleMouseLeaveCard}
                         >
