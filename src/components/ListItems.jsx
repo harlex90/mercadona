@@ -1,6 +1,5 @@
 import React from 'react';
 import useProducts from "../hooks/useProducts"
-import caddie from "../assets/caddie.jpg";
 import { ItemCard } from './ListPromos';
 import usePromos from '../hooks/usePromos';
 import AdminProductButtons from './AdminProductButtons';
@@ -23,7 +22,6 @@ const ListItems = ({ selectedCategory }) => {
             ...promo,
             ...product,
             new_price: product.price * (1 - (promo?.discount ?? 0)),
-            image: caddie,
             id: product.id,
         })
     });

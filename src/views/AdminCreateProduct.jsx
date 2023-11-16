@@ -11,7 +11,8 @@ const AdminCreateProduct = () => {
     const [inputName, setInputName] = React.useState("");
     const [inputDescription, setInputDescription] = React.useState("");
     const [inputPrice, setInputPrice] = React.useState(0);
-    const [inputCategory, setInputCategory] = React.useState();
+    const [inputCategory, setInputCategory] = React.useState("");
+    const [inputImage, setInputImage] = React.useState("");
 
     const navigate = useNavigate();
     const onSubmit = () => {
@@ -24,7 +25,8 @@ const AdminCreateProduct = () => {
             category_id: inputCategory,
             name: inputName,
             description: inputDescription,
-            price: inputPrice
+            price: inputPrice,
+            image: inputImage
         }).then(() => {
             navigate('/catalogue')
         })
@@ -55,6 +57,7 @@ const AdminCreateProduct = () => {
                     </select>
                     <input type="text" value={inputName} onChange={(e) => setInputName(e.currentTarget.value)} placeholder="nom du produit"/>
                     <input type="text" value={inputDescription} onChange={(e) => setInputDescription(e.currentTarget.value)} placeholder="description du produit"/>
+                    <input type="text" value={inputImage} onChange={(e) => setInputImage(e.currentTarget.value)} placeholder="url del'image du produit"/>
                     <input type="number" value={inputPrice} onChange={(e) => setInputPrice(e.currentTarget.value)} placeholder="prix du produit"/>
                     <button onClick={onSubmit}>Entrer</button>
                 </div>

@@ -2,16 +2,11 @@ import React, { useState } from 'react';
 import moment from 'moment';
 import { useIsAuthenticated } from "react-auth-kit";
 import { useNavigate } from "react-router-dom";
-
 import caddie from "../assets/caddie.jpg";
-import guitare from "../assets/guitare.jpg";
-import fauteuil from "../assets/fauteuil.jpg"
-import tableau from "../assets/tableau.jpg"
 import usePromos from '../hooks/usePromos';
 import useProducts from '../hooks/useProducts';
 
 export const ItemCard = ({ product }) => {
-
     const isAuthenticated = useIsAuthenticated();
 
     const navigate = useNavigate();
@@ -58,7 +53,7 @@ export const ItemCard = ({ product }) => {
                         >
                         <a href="#" onClick={onProduct} style={{textDecoration: "none"}}>
                             <img
-                                src={product.image}
+                                src={product.image ?? caddie}
                                 alt={product.name} 
                                 style={{width: 150, height: 150}}
                             />
@@ -107,12 +102,6 @@ export const ItemCard = ({ product }) => {
     )
 }
 
-function randomChoiceImage() {
-
-    const images = [caddie, guitare, fauteuil, tableau]
-    return images[Math.floor(images.length * Math.random())];
-}
-
 const ListPromos = () => {
     const { products } = useProducts();
     const { promos } = usePromos();
@@ -134,8 +123,7 @@ const ListPromos = () => {
             ...promo,
             ...product,
             new_price: product.price * (1 - promo.discount),
-            image: randomChoiceImage(),
-            id: promo.id,
+            id: product.id,
         })
     });
 

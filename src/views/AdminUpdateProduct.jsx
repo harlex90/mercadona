@@ -38,13 +38,7 @@ const AdminUpdateProduct = () => {
     
       const navigate = useNavigate();
       const onSubmit = (data) => {
-        axios.put(`/products/${id}`, {
-          category_id: data.category_id,
-          name: data.name,
-          description: data.description,
-          price: data.price,
-      
-        }).then(() => {
+        axios.put(`/products/${id}`, data).then(() => {
           navigate('/catalogue')
       })
       }
@@ -94,7 +88,7 @@ const AdminUpdateProduct = () => {
                 name='name'
                 defaultValue=""
                 render={({field: { value, onChange }}) => (
-                <input value={value} onChange={onChange} />
+                <input value={value} onChange={onChange} placeholder="nom" />
                 )}
               />
               <Controller 
@@ -103,17 +97,17 @@ const AdminUpdateProduct = () => {
                 defaultValue=""
 
                 render={({field: { value, onChange }}) => (
-                <input value={value} onChange={onChange} />
+                <input value={value} onChange={onChange} placeholder="description" />
                 )}
               />
 
-              {/* <Controller 
+              <Controller 
                 control={control} 
                 name='image'
                 render={({field: { value, onChange }}) => (
-                  <input value={value} onChange={onChange} />
+                  <input value={value} onChange={onChange} placeholder="image" />
                 )}
-              /> */}
+              />
 
               <Controller 
                 control={control} 
