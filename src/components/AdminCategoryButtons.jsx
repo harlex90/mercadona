@@ -28,8 +28,7 @@ const AdminCategoryButtons = () => {
             <div style={{display: "flex", marginLeft: "10%", gap: "100px"}}>
               <div style={{display: "flex", gap: "80px"}}>
                 {categories.map((category) => <ItemCategory key={category.id} category={category} />)}
-              </div>
-              <div style={{display: "flex", alignItems: "center", gap: "50px"}}>
+              {/* <div style={{display: "flex", alignItems: "center", gap: "50px"}}> */}
                 {isAuthenticated() && <button type='button' style={{display:"flex", justifyContent: "center", alignItems: "center", fontSize: "80px", backgroundColor: "white", width: "80px", height: "80px", borderRadius: "50%", border: "2px solid black"}}><a href="#" onClick={onPlus} style={{textDecoration: "none"}}>+</a></button>}
                 {isAuthenticated() && <button type='button' style={{display:"flex", justifyContent: "center", alignItems: "center", fontSize: "80px", backgroundColor: "white", width: "80px", height: "80px", borderRadius: "50%", border: "2px solid black"}}><a href="#" onClick={onMinus} style={{textDecoration: "none"}}>-</a></button>}
               </div>

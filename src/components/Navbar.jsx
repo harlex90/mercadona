@@ -1,4 +1,4 @@
-import { useIsAuthenticated, useSignOut, useSignIn } from "react-auth-kit";
+import { useIsAuthenticated, useSignOut } from "react-auth-kit";
 import { Link, useNavigate } from "react-router-dom";
 
 const Navbar = () => {
