@@ -1,0 +1,49 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AdminProductButtons authenticated match snapshot 1`] = `
+<DocumentFragment>
+  <div
+    style="display: flex; flex-direction: column; justify-content: center; align-items: center;"
+  >
+    <div
+      style="display: flex; justify-content: center; width: 100%; align-items: center; gap: 50px;"
+    >
+      <button
+        style="display: flex; justify-content: center; align-items: center; font-size: 80px; background-color: white; width: 80px; height: 80px; border-radius: 50%; border: 2px solid black;"
+        type="button"
+      >
+        <a
+          href="#"
+          style="text-decoration: none;"
+        >
+          +
+        </a>
+      </button>
+      <button
+        style="display: flex; justify-content: center; align-items: center; font-size: 80px; background-color: white; width: 80px; height: 80px; border-radius: 50%; border: 2px solid black;"
+        type="button"
+      >
+        <a
+          href="#"
+          style="text-decoration: none;"
+        >
+          -
+        </a>
+      </button>
+      <button
+        style="display: flex; justify-content: center; align-items: center; font-size: 15px; background-color: white; width: 80px; height: 80px; border-radius: 50%; border: 2px solid black;"
+        type="button"
+      >
+        <a
+          href="#"
+          style="text-decoration: none;"
+        >
+          Promotion
+        </a>
+      </button>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`AdminProductButtons match snapshot 1`] = `<DocumentFragment />`;

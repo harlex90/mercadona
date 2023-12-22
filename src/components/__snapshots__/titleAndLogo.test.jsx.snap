@@ -1,0 +1,33 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TitleAndLogo match snapshot 1`] = `
+<DocumentFragment>
+  <div
+    style="display: flex; flex: 1 1 10%; justify-content: center; gap: 10px; align-items: center;"
+  >
+    <div
+      style="display: flex;"
+    >
+      <img
+        alt="caddie"
+        src="caddie.jpg"
+        style="display: flex; width: 50px; height: 50px; border-radius: 50%; border: 2px solid black;"
+      />
+    </div>
+    <div
+      style="display: block;"
+    >
+      <h1
+        style="margin: 0px;"
+      >
+        MERCADONA
+      </h1>
+      <h4
+        style="font-style: italic; margin: 0px;"
+      >
+        Des promos toute l'année !
+      </h4>
+    </div>
+  </div>
+</DocumentFragment>
+`;

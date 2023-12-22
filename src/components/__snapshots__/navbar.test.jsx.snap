@@ -32,9 +32,9 @@ exports[`Navbar match snapshot 1`] = `
     <li>
       <a
         href="#"
-        style="text-decoration: none; font-weight: bold; cursor: pointer;"
+        style="text-decoration: none; font-weight: bold;"
       >
-        Sign In
+        Signout
       </a>
     </li>
   </ul>

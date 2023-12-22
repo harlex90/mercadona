@@ -1,0 +1,27 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ListPromos match snapshot 1`] = `
+<DocumentFragment>
+  <div
+    style="display: flex; justify-content: space-around; flex-wrap: wrap;"
+  />
+</DocumentFragment>
+`;
+
+exports[`ListPromos match snapshot when data 1`] = `
+<DocumentFragment>
+  <div
+    style="display: flex; justify-content: space-around; flex-wrap: wrap;"
+  >
+    <li
+      style="list-style: none;"
+    >
+      <div
+        data-discount="0.5"
+        data-product="3"
+        data-testid="ItemCard"
+      />
+    </li>
+  </div>
+</DocumentFragment>
+`;

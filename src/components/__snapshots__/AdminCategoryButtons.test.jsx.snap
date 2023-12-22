@@ -1,0 +1,42 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AdminCategoryButtons match snapshot when categories 1`] = `
+<DocumentFragment>
+  <div
+    style="display: flex; flex-direction: column; align-items: start; gap: 5px; margin-bottom: 20px; margin-top: 80px;"
+  >
+    <div
+      style="display: flex; margin-left: 10%; gap: 100px;"
+    >
+      <div
+        style="display: flex; gap: 80px;"
+      >
+        <div
+          data-category="id1"
+          data-testid="ItemCategory"
+        />
+        <div
+          data-category="id2"
+          data-testid="ItemCategory"
+        />
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`AdminCategoryButtons match snapshot when no categories 1`] = `
+<DocumentFragment>
+  <div
+    style="display: flex; flex-direction: column; align-items: start; gap: 5px; margin-bottom: 20px; margin-top: 80px;"
+  >
+    <div
+      style="display: flex; margin-left: 10%; gap: 100px;"
+    >
+      <div
+        style="display: flex; gap: 80px;"
+      />
+    </div>
+  </div>
+</DocumentFragment>
+`;
