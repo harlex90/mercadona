@@ -3,9 +3,9 @@ import TitleAndLogo from "../components/TitleAndLogo";
 import Navbar from "../components/Navbar";
 import Footer from "./Footer";
 
-function Home() {
+const Home = () => {
     return (
-        <div style={{display: "flex", flexDirection: "column", minHeight: "1OOvh"}}>
+        <div style={{display: "flex", flexDirection: "column", minHeight: "100vh"}}>
             <div style={{display: "flex", alignItems: "center", marginTop: "70px", marginBottom: "70px"}}>
                 <TitleAndLogo/>
                 <div style={{display: "flex", justifyContent: "center", flex: "2 1 10%"}}>
@@ -15,7 +15,9 @@ function Home() {
 
                 </div>
             </div>
-           <ListPromos />
+            <div>
+                <ListPromos />
+            </div>
            <Footer />
         </div>
     )

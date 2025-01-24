@@ -98,6 +98,6 @@ const ItemCard = ({ product }) => {
             </div>
         </div>
     )
-}
+};
 
 export default ItemCard;

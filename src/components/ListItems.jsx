@@ -1,9 +1,9 @@
 import React from 'react';
 import useProducts from "../hooks/useProducts"
-import { ItemCard } from './ListPromos';
 import usePromos from '../hooks/usePromos';
 import AdminProductButtons from './AdminProductButtons';
 import findMaxPromo from '../assets/utils/findMaxPromo';
+import ItemCard from './ItemCard';
 
 const ListItems = ({ selectedCategory }) => {
     const { products } = useProducts();

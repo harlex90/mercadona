@@ -4,7 +4,7 @@ import Footer from "./Footer";
 
 const About = () => {
     return(
-        <div>
+        <div style={{display: "flex", flexDirection: "column", minHeight: "100vh"}}>
             <div style={{display: "flex", alignItems: "center", marginTop: "70px", marginBottom: "70px"}}>
                 <TitleAndLogo/>
                 <div style={{display: "flex", justifyContent: "center", flex: "2 1 10%"}}>
@@ -14,8 +14,8 @@ const About = () => {
 
                 </div>
             </div>
-            <div style={{display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center", margin: "10%", fontSize: "20px"}}>
-                <h3 style={{marginBottom: "80px"}}>Mercadona : Un géant du retail innovant et écologiquement conscients</h3>
+            <div style={{display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center", marginLeft: "50px", marginRight: "50px", fontSize: "20px"}}>
+                <h3 style={{marginBottom: "80px"}}>Mercadona : Un géant du retail innovant et écologiquement conscient</h3>
              <p>Forte de ses 1675 établissements répartis sur le territoire espagnol, Mercadona s'impose comme un pilier majeur dans le domaine du retail. Avec un chiffre d'affaires spectaculaire de 20 milliards d'euros, notre entreprise illustre son succès à travers une politique de prix compétitifs et des promotions régulières. Ainsi, nous nous assurons que nos clients peuvent toujours trouver une sélection d'au moins une centaine de produits en promotion, tout au long de l'année.</p>
 
 <p>Toutefois, conscient de l'importance grandissante de la dimension écologique dans notre secteur, Mercadona a décidé de marquer un tournant dans sa stratégie de communication. Jusqu'à présent, notre communication a principalement reposé sur l'utilisation de tracts publicitaires. 
